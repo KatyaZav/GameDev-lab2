@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 449759829}
   - component: {fileID: 449759830}
   - component: {fileID: 449759831}
+  - component: {fileID: 449759832}
   m_Layer: 0
   m_Name: 'right border '
   m_TagString: Untagged
@@ -294,6 +295,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _direction: -1
+--- !u!70 &449759832
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449759828}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.27252197, y: -1.4648056}
+  m_Size: {x: 1.045044, y: 5.2691336}
+  m_Direction: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,6 +530,7 @@ GameObject:
   - component: {fileID: 929171923}
   - component: {fileID: 929171924}
   - component: {fileID: 929171925}
+  - component: {fileID: 929171926}
   m_Layer: 0
   m_Name: left border
   m_TagString: Untagged
@@ -573,6 +591,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _direction: 1
+--- !u!70 &929171926
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929171922}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.2214241, y: -1.2604141}
+  m_Size: {x: 0.9428482, y: 4.610915}
+  m_Direction: 0
 --- !u!1 &1768446918 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 779102758273883791, guid: 2bb81b4226e33fc409dcacf90f994a34, type: 3}
