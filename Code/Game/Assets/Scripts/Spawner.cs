@@ -24,14 +24,15 @@ public class Spawner : MonoBehaviour
         {
             yield return new WaitForFixedUpdate();
 
-            transform.Translate((new Vector2(movementDirection, 0)) * MaxSpeed * Time.fixedDeltaTime);
+            //transform.Translate((new Vector2(movementDirection, 0)) * MaxSpeed * Time.fixedDeltaTime);
+            _rb.AddForce((new Vector2(movementDirection, 0)) * MaxSpeed*2);
 
             if (Random.Range(1, 100) < 4)
             {
                 movementDirection *= -1;
             }
            
-            if (Random.Range(0, 10) > 5)
+            if (Random.Range(0, 100) < 10)
             {
                 speed = Random.Range(0, MaxSpeed);
             }
