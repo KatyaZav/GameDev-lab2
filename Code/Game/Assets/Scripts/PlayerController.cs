@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         var movement = new Vector2(x, 0);
 
-        transform.Translate(movement * speed * Time.fixedDeltaTime);
+        Debug.Log(movement);
+        _rb.AddForce(movement * speed);
+        //transform.Translate(movement * speed * Time.fixedDeltaTime);
     }
 }
