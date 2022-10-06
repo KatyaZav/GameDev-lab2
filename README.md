@@ -6,7 +6,7 @@
 
 | Задание | Выполнение | Баллы |
 | ------ | ------ | ------ |
-| Задание 1 | # | 60 |
+| Задание 1 | * | 60 |
 | Задание 2 | # | 20 |
 | Задание 3 | # | 20 |
 
@@ -44,8 +44,8 @@
 
 2) Добавить анимацию.
 Я сделала простенькую анимацию вагонетки и спавнера золота (восклицательный знак).
-![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/2.1.mp4)
-![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/2.2.mp4)
+![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/2.1.gif)
+![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/2.2.gif)
 
 3) Добавить перемещение вагонетки через кнопки клавиатуры.
 Добавим кнопки в Input Manager, чтобы их указать в перемещении. Это нужно, чтобы в коде не было прямой привязки к кнопкам.
@@ -61,11 +61,11 @@ private void Move()
         transform.Translate(movement * speed * Time.fixedDeltaTime);
     }
 ```
-![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/3.2.mp4)
+![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/3.2.gif)
 (И это оказалось ошибкой. Подробнее в пункте 5).
 
 4) Сделать передвижение спавнера золота, добавить элемент случайности в его перемещение.
-![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/4.mp4)
+![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/4.gif)
 
 Я решила добавить хаотичности движения не только за счет движения в разные стороны, но и с разной скоростью. Сами показатели вероятностей настраиваются из инспектора unity.
 ```py
@@ -113,7 +113,7 @@ private void Move()
         //transform.Translate(movement * speed * Time.fixedDeltaTime);
     }
 ```
-![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/5.mp4)
+![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/5.gif)
 
 6) Сделать создание золота из спавнера.
 ```py
@@ -128,7 +128,7 @@ private IEnumerator GenerateGold()
         }
     }
 ```
-![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/6.mp4)
+![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/6.gif)
 
 7) Сделать исчезновение золота при выходе за карту.
 Я создала пустой объект с триггерным колайдером. На него навесила такой скрипт:
