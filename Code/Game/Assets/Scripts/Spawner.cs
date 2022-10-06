@@ -64,8 +64,7 @@ public class Spawner : MonoBehaviour
             yield return new WaitForSeconds(TimeBetweenGold);
 
             var golden = Instantiate(gold);
-            golden.transform.position = transform.position;
-            Debug.Log(gameObject);
+            golden.transform.position = transform.position;           
         }
     }
 }
