@@ -62,6 +62,7 @@ private void Move()
     }
 ```
 ![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/3.2.gif)
+
 (И это оказалось ошибкой. Подробнее в пункте 5).
 
 4) Сделать передвижение спавнера золота, добавить элемент случайности в его перемещение.
@@ -168,7 +169,7 @@ public class Gold : MonoBehaviour, ICollectable
     }
 }
 ```
-![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/6.mp4)
+![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/6.gif)
 
 ## Задание 2
 ### В проект, выполненный в предыдущем задании, добавить систему проверки того, что SDK подключен (доступен в режиме онлайн и отвечает на запросы);
