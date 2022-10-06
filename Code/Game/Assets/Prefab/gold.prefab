@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 386487177130194676}
   - component: {fileID: 386487177130194677}
   - component: {fileID: 386487177130194678}
+  - component: {fileID: 2504966455129555001}
   m_Layer: 8
   m_Name: gold
   m_TagString: Untagged
@@ -169,3 +170,16 @@ PolygonCollider2D:
       - {x: -2.74, y: -1.165}
       - {x: -2.73, y: -1.175}
       - {x: -2.3899999, y: -1.175}
+--- !u!114 &2504966455129555001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386487177130194674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039182836a881bd469584475721231d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disapearEffectPrefab: {fileID: 100000, guid: 83cd9cc9f9c88824ba18dc59b05ae328, type: 3}
