@@ -267,7 +267,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.042830944, y: -5.023218}
+  m_Offset: {x: -0.042830944, y: -3.555092}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -278,7 +278,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0856619, y: 12.3791275}
+  m_Size: {x: 1.0856619, y: 15.31538}
   m_EdgeRadius: 0
 --- !u!1 &519420028
 GameObject:
@@ -397,6 +397,10 @@ PrefabInstance:
     - target: {fileID: 910604581481837007, guid: 6db33b04c25c3a64eaf20eba9d0f7687, type: 3}
       propertyPath: m_AngularDrag
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 910604581481837007, guid: 6db33b04c25c3a64eaf20eba9d0f7687, type: 3}
+      propertyPath: m_Constraints
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 910604581481837007, guid: 6db33b04c25c3a64eaf20eba9d0f7687, type: 3}
       propertyPath: m_GravityScale
@@ -532,7 +536,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02690792, y: -5.023218}
+  m_Offset: {x: 0.02690792, y: -3.5754826}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -543,7 +547,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0538158, y: 12.3791275}
+  m_Size: {x: 1.0538158, y: 15.274599}
   m_EdgeRadius: 0
 --- !u!1 &1768446918 stripped
 GameObject:
@@ -563,7 +567,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.02912867, y: 0.014564276}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -574,7 +578,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.4660599, y: 0.97087145}
   m_EdgeRadius: 0
 --- !u!114 &1768446920
 MonoBehaviour:
@@ -590,7 +594,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxSpeed: 5
   movementDirection: 1
+  gold: {fileID: 386487177130194674, guid: e879eba5e74256940a7d1e24e8f42617, type: 3}
   speed: 0
+  ChanceChangeDirection: 5
+  ChanceChangeSpeed: 2
 --- !u!50 &1768446922
 Rigidbody2D:
   serializedVersion: 4
@@ -663,6 +670,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 435525055
       objectReference: {fileID: 0}
+    - target: {fileID: 779102757598066987, guid: 2bb81b4226e33fc409dcacf90f994a34, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.61
+      objectReference: {fileID: 0}
     - target: {fileID: 779102758273883790, guid: 2bb81b4226e33fc409dcacf90f994a34, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -673,7 +684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 779102758273883790, guid: 2bb81b4226e33fc409dcacf90f994a34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.74
+      value: 5.73
       objectReference: {fileID: 0}
     - target: {fileID: 779102758273883790, guid: 2bb81b4226e33fc409dcacf90f994a34, type: 3}
       propertyPath: m_LocalPosition.z

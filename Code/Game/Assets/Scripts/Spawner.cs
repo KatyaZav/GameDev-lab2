@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] float movementDirection;
 
     public float TimeBetweenGold { get; private set; }
+    [SerializeField] GameObject gold;
     [SerializeField] float speed;
     Rigidbody2D _rb;
 
@@ -18,10 +19,12 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
+        TimeBetweenGold = 5f;
         _rb = GetComponent<Rigidbody2D>();
         speed = MaxSpeed;
 
         StartCoroutine(Moving());
+        StartCoroutine(GenerateGold());
     }
 
     private IEnumerator Moving()
@@ -54,8 +57,15 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    /*private IEnumerator GenerateGold()
+    private IEnumerator GenerateGold()
     {
+        while (true)
+        {
+            yield return new WaitForSeconds(TimeBetweenGold);
 
-    }*/
+            var golden = Instantiate(gold);
+            golden.transform.position = transform.position;
+            Debug.Log(gameObject);
+        }
+    }
 }
