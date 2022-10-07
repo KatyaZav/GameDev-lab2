@@ -185,6 +185,7 @@ public class Gold : MonoBehaviour, ICollectable
 ![Image alt](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/2%20task/2.jpg)
 
 3) Проверить наличие рекламы в игре.
+
 Наличие рекламы в игре покажет, что SDK работает и отвечает на запросы.
 
 ![Image alt](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/2%20task/3.jpg)
