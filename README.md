@@ -192,7 +192,7 @@ public class Gold : MonoBehaviour, ICollectable
 1) Найти информацию по платформам.
 2) Оформить полученную информацию в реферат.
 
-https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/3%20task/%D1%80%D0%B5%D1%84%D0%B5%D1%80%D0%B0%D1%82.docx
+https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/3%20task/referat.pdf
 
 ## Выводы
 За лабораторную работу я столкнулась с несколькими проблемами и успешно их решила. 
