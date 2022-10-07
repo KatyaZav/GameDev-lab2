@@ -40,18 +40,11 @@
 ### По теме видео практических работ 1-5 повторить реализацию игры на Unity. Привести описание выполненных действий.
 Ход работы:
 1) Добавить графику и объекты.
-В моем случае это восклицательный знак, вагонетка, золото и фон.
-
 2) Добавить анимацию.
-Я сделала простенькую анимацию вагонетки и спавнера золота (восклицательный знак).
-![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/2.1.mp4)
-![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/2.2.mp4)
-
 3) Добавить перемещение вагонетки через кнопки клавиатуры.
-Добавим кнопки в Input Manager, чтобы их указать в перемещении. Это нужно, чтобы в коде не было прямой привязки к кнопкам.
-![Фото](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/3.1.jpg)
+Добавим кнопки в Input Manager, чтобы их указать в перемещении.
 
-Движение реализовала в FixedUpdate с использованием transform. 
+Для этого я добавила этот код в FixedUpdate. (Это сложность! Узнала, что передвижение в фиксед апдейт).
 ```py
 private void Move()
     {
@@ -61,114 +54,11 @@ private void Move()
         transform.Translate(movement * speed * Time.fixedDeltaTime);
     }
 ```
-![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/3.2.mp4)
-(И это оказалось ошибкой. Подробнее в пункте 5).
-
 4) Сделать передвижение спавнера золота, добавить элемент случайности в его перемещение.
-![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/4.mp4)
-
-Я решила добавить хаотичности движения не только за счет движения в разные стороны, но и с разной скоростью. Сами показатели вероятностей настраиваются из инспектора unity.
-```py
-private IEnumerator Moving()
-    {
-        while (true)
-        {
-            yield return new WaitForFixedUpdate();
-
-            //transform.Translate((new Vector2(movementDirection, 0)) * MaxSpeed * Time.fixedDeltaTime);
-            _rb.AddForce((new Vector2(movementDirection, 0)) * speed * 2);
-
-            if (Random.Range(1, 100) < ChanceChangeDirection)
-            {
-                movementDirection *= -1;
-
-                if (Random.Range(0, 100) < 30)
-                {
-                    speed = Random.Range(0, MaxSpeed);
-                }
-                else if (Random.Range(0, 100) < 5)
-                {
-                    speed = MaxSpeed;
-                }
-            }
-
-            if (Random.Range(0, 100) < ChanceChangeSpeed)
-            {
-                speed = Random.Range(0, MaxSpeed);
-            }
-        }
-    }
-```
-
 5) Добавить границы карты.
-На этом этапе пришлось вернуться к пункту 3 и 4, чтобы сделать перемещение физическим, то есть через AddForse. Без этого объекты проходили сквозь границы карты. Решить это можно было бы через код, но тогда всем сущностям пришлось бы прописывать вручную одно и тоже ограничение.
-```py
-private void Move()
-    {
-        float x = Input.GetAxis("Horizontal");
-        var movement = new Vector2(x, 0);
-
-        //Debug.Log(movement);
-        _rb.AddForce(movement * speed);
-        //transform.Translate(movement * speed * Time.fixedDeltaTime);
-    }
-```
-![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/5.mp4)
-
+На этом этапе пришлось вернуться к пункту 3 и 4, чтобы сделать перемещение физическим, то есть через AddForse. Без этого объекты проходили сквозь границы карты.
 6) Сделать создание золота из спавнера.
-```py
-private IEnumerator GenerateGold()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(TimeBetweenGold);
-
-            var golden = Instantiate(gold);
-            golden.transform.position = transform.position;           
-        }
-    }
-```
-![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/6.mp4)
-
-7) Сделать исчезновение золота при выходе за карту.
-Я создала пустой объект с триггерным колайдером. На него навесила такой скрипт:
-```py
-private void OnTriggerEnter2D(Collider2D collision)
-    {
-        try
-        {
-            Debug.Log("Deleted " + collision.gameObject.ToString());
-            ICollectable obj = collision.gameObject.GetComponent<ICollectable>();
-            obj.Disapear();
-        }
-        catch(System.Exception e)
-        {
-            Debug.LogWarning("Fall something non ICollectible! " + e + " " + collision.gameObject.ToString());
-            Destroy(collision.gameObject);
-        }
-    }
-```
-Он работает на интерфейсе, который используется в классе золота:
-```py
-public class Gold : MonoBehaviour, ICollectable
-{
-    [SerializeField] GameObject disapearEffectPrefab;
-
-    public void Pick()
-    {
-        Debug.Log("Pick gold");
-        Destroy(gameObject);
-    }
-
-    public void Disapear()
-    {
-        var explosion = Instantiate(disapearEffectPrefab);
-        explosion.transform.position = transform.position;
-        Destroy(gameObject);
-    }
-}
-```
-![Видео](https://github.com/KatyaZav/GameDev-lab2/blob/main/Screens/1%20task/6.mp4)
+7) Добавить частицы от вагонетки.
 
 ## Задание 2
 ### В проект, выполненный в предыдущем задании, добавить систему проверки того, что SDK подключен (доступен в режиме онлайн и отвечает на запросы);
@@ -194,9 +84,11 @@ public class Gold : MonoBehaviour, ICollectable
 
 
 ## Выводы
-За лабораторную работу я столкнулась с несколькими проблемами и успешно их решила. 
-Я поняла, что для передвижения лучше использовать физику, а не изменение координат вручную.
-Я попрактиковалась в создании и использовании корутин и интерфейсов, поработала с эффектами. 
+За лабораторную работу я научилась создавать 3D объекты, настраивать RigidBody и работать с полем данных InputField. 
+
+Я поработала с различными 3D объектами, материалами. Посмотрела, как изменяется поле Transform при переносе в родительский элемент и что изменяют поля в RigidBody. Создала генирацию кубов того количества, которое ввел пользователь.
+
+Самым сложным заданием для меня оказалось третье. Сложностью этого задания для меня было то, что ввод количества кубов происходит после старта сцены, а не до. как бы я реализовала "упрощенный" вариант: завела бы в пустом объекте переменную, отвечающую за количество генирирующихся кубов, и заполняла бы ее через инспектор до запуска сцены. Однако, это противоречило бы условию.
 
 ## Powered by
 
