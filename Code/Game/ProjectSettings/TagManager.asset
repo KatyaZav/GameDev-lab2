@@ -9,13 +9,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - effects
   - Water
   - UI
   - Player
   - Spawner
   - game_obj
-  - effects
+  - 
   - Dead zone
   - 
   - 
@@ -47,4 +47,7 @@ TagManager:
     locked: 0
   - name: game_items
     uniqueID: 435525055
+    locked: 0
+  - name: effect
+    uniqueID: 4253271345
     locked: 0
